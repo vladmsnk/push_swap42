@@ -1,9 +1,9 @@
-SRCS			=	test_stack.c stack.c
+SRCS			=	main.c ft_atoi.c ft_strlen.c  stack.c
 OBJS			= $(SRCS:.c=.o)
  
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror -g -I.
  
 NAME			= start
  
