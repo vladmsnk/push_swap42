@@ -11,4 +11,5 @@ int		*stack_to_arr(int len, t_node *stack);
 char	*ft_itoa(int n);
 void	bubble_sort(int *a, int n);
 void	ft_putnbr_fd(int n, int fd);
+void	fill_index(t_node **stack, int *arr, int len);
 #endif

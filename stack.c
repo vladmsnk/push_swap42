@@ -9,6 +9,7 @@ t_node	*init_stack(int value)
 	if (node == NULL)
 		return (NULL);
 	node->value = value;
+	node->index = -1;
 	node->next = NULL;
 	return node;
 }
@@ -114,8 +115,8 @@ t_node	*find_pre_last(t_node *stack)
 
 void	rotate(t_node **stack)
 {
-	t_node *last;
-	t_node *tmp;
+	t_node	*last;
+	t_node	*tmp;
 
 	if (*stack)
 	{
@@ -129,9 +130,9 @@ void	rotate(t_node **stack)
 
 void	reverse_rotate(t_node **stack)
 {
-	t_node *pre_last;
+	t_node	*pre_last;
 	t_node	*last;
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (*stack && (*stack)->next)
 	{
