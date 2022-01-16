@@ -1,7 +1,7 @@
 #include "push_swap_lib.h"
 #include <stdio.h>
 
-static void	with_zeros(int *minus_cnt, int *plus_cnt, int *iter, int *nmbr)
+static void	with_zeros(int *minus_cnt, int *plus_cnt, int *iter, long *nmbr)
 {
 	*minus_cnt = 0;
 	*plus_cnt = 0;
@@ -9,12 +9,12 @@ static void	with_zeros(int *minus_cnt, int *plus_cnt, int *iter, int *nmbr)
 	*nmbr = 0;
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		minus_cnt;
 	int		plus_cnt;
 	int		iter;
-	int		nmbr;
+	long	nmbr;
 
 	with_zeros(&minus_cnt, &plus_cnt, &iter, &nmbr);
 	while (str[iter] == ' ' || (str[iter] >= '\t' && str[iter] <= '\r'))

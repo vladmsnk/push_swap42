@@ -1,4 +1,4 @@
-SRCS			=	main.c ft_atoi.c ft_strlen.c  stack.c
+SRCS			=	stack_to_array.c ft_atoi.c ft_itoa.c ft_stack_len.c  stack.c bubble_sort.c
 OBJS			= $(SRCS:.c=.o)
  
 CC				= gcc

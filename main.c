@@ -1,11 +1,20 @@
-#include "stack.h"
 #include "push_swap_lib.h"
+
+
+void	execute_rules_from_stdin()
+{
+	t_node	*stack;
+
+	
+}
 
 int	check_str(char *str)
 {
 	int	i;
 
 	i = 0;
+	if (ft_atoi(str) > INT_MAX || ft_atoi(str) < INT_MIN)
+		return (0);
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -23,25 +32,28 @@ t_node	*fill_stack(int argc, char **argv)
 
 	i = 1;
 	stack = NULL;
-	while (argv[i])
+	if (argc >= 2)
 	{
-		printf("%s\n", argv[i]);
-		if (!check_str(argv[i]))
-			return (NULL);
-		push_back(&stack, ft_atoi(argv[i]));
-		i++;
+		while (argv[i])
+		{
+			if (!check_str(argv[i]))
+				return (NULL);
+			push_back(&stack, ft_atoi(argv[i]));
+			i++;
+		}
 	}
 	return (stack);
 }
 
+// int main(int argc, char **argv)
+// {
+// 	t_node	*stack;
 
-int main(int argc, char **argv)
-{
-	t_node	*stack;
-
-	stack = fill_stack(argc, argv);
-	if (stack == NULL)
-		printf("%s\n", "Error");
-	print_stack(stack);
-	
-}
+// 	stack = fill_stack(argc, argv);
+// 	if (stack == NULL)
+// 	{
+// 		write(1,"Error\n", 6);
+// 		return (-1);
+// 	}
+// 	print_stack(stack);
+// }

@@ -6,6 +6,8 @@ t_node	*init_stack(int value)
 	t_node	*node;
 
 	node = (t_node*)malloc(sizeof(t_node));
+	if (node == NULL)
+		return (NULL);
 	node->value = value;
 	node->next = NULL;
 	return node;
@@ -38,20 +40,6 @@ void	pop(t_node **stack)
 	}
 }
 
-void	print_stack(t_node *stack)
-{
-	t_node *top = stack;
-	if (top)
-	{
-		while (top)
-		{
-			printf("%d ---> ", top->value);
-			top = top->next;
-		}
-		printf("NULL\n");
-	}
-}
-
 
 void	clean_stack(t_node **stack)
 {
@@ -80,7 +68,6 @@ void	swap(t_node **stack)
 	{
 		tmp1 = *stack;	
 		tmp2 = (*stack)->next;
-
 		tmp1->next = tmp2->next;
 		tmp2->next = tmp1;
 		*stack = tmp2;
@@ -97,7 +84,7 @@ void	push_from_to(t_node **stack1, t_node **stack2)
 	}
 }
 
-t_node *find_last(t_node *stack)
+t_node	*find_last(t_node *stack)
 {
 	t_node *last;
 
