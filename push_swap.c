@@ -1,5 +1,7 @@
 #include "push_swap_lib.h"
 
+
+
 void	p_swap(t_node **stack_a, int len)
 {
 	int	*arr;
@@ -10,17 +12,7 @@ void	p_swap(t_node **stack_a, int len)
 	return;
 }
 
-int main()
-{
-	t_node	*stack_a;
-	int		len;
-
-	stack_a = NULL;
-	push_back(&stack_a, 1);
-	push_back(&stack_a, 2);
-	push_back(&stack_a, 3);
-	push_back(&stack_a, 4);
-	len = ft_stack_len(stack_a);
-	p_swap(&stack_a, len);
-	print_stack(stack_a);
-}
+// int main()
+// {
+	
+// }

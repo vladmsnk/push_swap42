@@ -1,11 +1,10 @@
 #ifndef SORTS_H
 # define SORTS_H
 
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <limits.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -13,7 +12,6 @@ typedef struct s_node
 	int				index;
 	struct s_node	*next;
 }   t_node;
-
 
 t_node	*init_stack(int value);
 void	push_back(t_node **stack, int value);
@@ -25,4 +23,6 @@ t_node	*find_last(t_node *stack);
 t_node	*find_pre_last(t_node *stack);
 void	rotate(t_node **stack);
 void	reverse_rotate(t_node **stack);
+
+
 #endif  
