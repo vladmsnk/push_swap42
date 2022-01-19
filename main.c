@@ -5,8 +5,6 @@
 // {
 // 	t_node	*stack;
 
-
-
 // }
 
 int	check_str(char *str)
@@ -46,16 +44,17 @@ t_node	*fill_stack(int argc, char **argv)
 	return (stack);
 }
 
-// int main(int argc, char **argv)
-// {
-// 	t_node	*stack_a;
+int main(int argc, char **argv)
+{
+	t_node	*stack_a;
 
-// 	stack_a = fill_stack(argc, argv);
-// 	if (stack_a == NULL)
-// 	{
-// 		write(1,"Error\n", 6);
-// 		return (-1);
-// 	}
-// 	p_swap(stack_a, argc - 1);
-// 	// print_stack(stack);
-// }
+	stack_a = fill_stack(argc, argv);
+	// print_stack(stack_a);
+	if (stack_a == NULL)
+	{
+		write(1,"Error\n", 6);
+		return (-1);
+	}
+	p_swap(&stack_a, argc - 1);
+	print_stack(stack_a);
+}

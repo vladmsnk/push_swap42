@@ -17,4 +17,5 @@ void    exec_rotate(t_node **s_a, t_node **s_b, int num);
 void    exec_rev_rotate(t_node **s_a, t_node **s_b, int num);
 void    exec_swap(t_node **s_a, t_node **s_b, int num);
 void    exec_push(t_node **s_a, t_node **s_b, int num);
+void    small_sort(t_node **stack_a);
 #endif

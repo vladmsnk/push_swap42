@@ -126,11 +126,11 @@ void    should_exec_push()
 }
 
 
-int main()
-{
-    should_exec_rotate();
-    should_exec_swap();
-    should_exec_rev_rotate();
-    should_exec_push();
-    printf("%s\n", "tests passed!!");
-}
+// int main()
+// {
+//     should_exec_rotate();
+//     should_exec_swap();
+//     should_exec_rev_rotate();
+//     should_exec_push();
+//     printf("%s\n", "tests passed!!");
+// }
