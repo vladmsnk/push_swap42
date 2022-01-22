@@ -3,6 +3,7 @@
 
 # include "stack.h"
 
+
 long	ft_atoi(const char *str);
 size_t	ft_stack_len(t_node *stack);
 void	ft_putnbr_fd(int n, int fd);
@@ -18,4 +19,7 @@ void    exec_rev_rotate(t_node **s_a, t_node **s_b, int num);
 void    exec_swap(t_node **s_a, t_node **s_b, int num);
 void    exec_push(t_node **s_a, t_node **s_b, int num);
 void    small_sort(t_node **stack_a);
+int		find_min(int *arr, int len);
+int		find_max(int *arr, int len);
+int		find_median(int *arr, int len);
 #endif
