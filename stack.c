@@ -15,7 +15,7 @@ t_node	*init_stack(int value)
 }
 
 
-void	push_back(t_node **stack, int value)
+void	push_back(t_node **stack, int value, int index)
 {
 	t_node	*curr;
 
@@ -27,6 +27,7 @@ void	push_back(t_node **stack, int value)
 		curr->next = *stack;
 		*stack = curr;
 	}
+	(*stack)->index = index;
 }
 
 void	pop(t_node **stack)
@@ -80,7 +81,7 @@ void	push_from_to(t_node **stack1, t_node **stack2)
 {
 	if (*stack1)
 	{
-		push_back(stack2, (*stack1)->value);
+		push_back(stack2, (*stack1)->value,(*stack1)->index);
 		pop(stack1);
 	}
 }

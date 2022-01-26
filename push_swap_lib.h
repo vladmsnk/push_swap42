@@ -13,7 +13,7 @@ int		*stack_to_arr(int len, t_node *stack);
 void	bubble_sort(int *a, int n);
 void	fill_index(t_node **stack, int *arr, int len);
 t_node	*fill_stack(int argc, char **argv);
-void	p_swap(t_node **stack_a, int len);
+void	p_swap(t_node **stack_a, t_node **stack_b, int len);
 void    exec_rotate(t_node **s_a, t_node **s_b, int num);
 void    exec_rev_rotate(t_node **s_a, t_node **s_b, int num);
 void    exec_swap(t_node **s_a, t_node **s_b, int num);
@@ -22,4 +22,8 @@ void    small_sort(t_node **stack_a);
 int		find_min(int *arr, int len);
 int		find_max(int *arr, int len);
 int		find_median(int *arr, int len);
+int		check_sorted(int *arr, int len);
+int		count_ops_to_add(t_node	*stack_a, int curr_len, int value);
+void	medium_sort(t_node  **stack_a,t_node **stack_b, int len);
+void	big_sort(t_node	**stack_a, t_node **stack_b, int len, int range);
 #endif

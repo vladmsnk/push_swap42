@@ -1,12 +1,6 @@
 #include "push_swap_lib.h"
 
 
-// void	execute_rules_from_stdin()
-// {
-// 	t_node	*stack;
-
-// }
-
 int	check_str(char *str)
 {
 	int	i;
@@ -37,7 +31,7 @@ t_node	*fill_stack(int argc, char **argv)
 		{
 			if (!check_str(argv[i]))
 				return (NULL);
-			push_back(&stack, ft_atoi(argv[i]));
+			push_back(&stack, ft_atoi(argv[i]), -1);
 			i++;
 		}
 	}
@@ -47,14 +41,21 @@ t_node	*fill_stack(int argc, char **argv)
 int main(int argc, char **argv)
 {
 	t_node	*stack_a;
+	t_node	*stack_b;
+	// int	count;
 
 	stack_a = fill_stack(argc, argv);
+	stack_b = NULL;
 	// print_stack(stack_a);
 	if (stack_a == NULL)
 	{
 		write(1,"Error\n", 6);
 		return (-1);
 	}
-	p_swap(&stack_a, argc - 1);
+	p_swap(&stack_a,&stack_b, argc - 1);
+	// count = count_ops_to_add(stack_a, 3, 12);
+	// p_swap(&stack_a, argc - 1);
 	print_stack(stack_a);
+	// count = count_ops_to_add(stack_a, 4, 3);
+	// printf("%d\n", count);
 }

@@ -1,6 +1,5 @@
 #include "push_swap_lib.h"
 
-
 int	check_sorted(int *arr, int len)
 {
 	int	i;
@@ -16,7 +15,6 @@ int	check_sorted(int *arr, int len)
 	}
 	return (1);
 }
-
 
 int	check_parts_sorted(int *arr, int point,int len)
 {
@@ -42,7 +40,6 @@ int	check_elmost_sorted(int *arr, int len)
 	int	i;
 	int	point;
 	int	cnt;
-	int	tmp[len];
 
 	i = 0;
 	cnt = 0;
@@ -61,8 +58,8 @@ int	check_elmost_sorted(int *arr, int len)
 }
 
 
-int main() 
-{
-	int arr[] = {2, 3,4, 5, 6, 7, 1 , 2};
-	printf("%d\n", check_elmost_sorted(arr, 7));
-}
+// int main() 
+// {
+// 	int arr[] = {2, 3,4, 5, 6, 7, 1 , 2};
+// 	printf("%d\n", check_elmost_sorted(arr, 7));
+// }
