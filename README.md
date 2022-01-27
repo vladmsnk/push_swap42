@@ -1,4 +1,4 @@
-# The goal is to sort in ascending order numbers into stack a.
+# The goal is to sort in ascending order numbers in stack a.
 ### I am also able to use the second empty stack b
 
 ## Operations allowed
@@ -22,3 +22,8 @@ becomes the first one. \
 rrb : reverse rotate b - shift down all elements of stack b by 1. The last element
 becomes the first one. \
 rrr : rra and rrb at the same time.
+
+##To run program
+
+### make
+### ./push_swap 7 8 19 3 4 1 9
