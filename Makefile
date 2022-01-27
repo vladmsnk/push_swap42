@@ -1,4 +1,4 @@
-SRCS			=	 ft_atoi.c ft_itoa.c ft_stack_len.c  stack.c bubble_sort.c push_swap.c main.c fill_with_ind.c exec_ops.c test_ops.c small_sort.c array_funcs.c array_checks.c
+SRCS			=	 ft_atoi.c stack.c bubble_sort.c push_swap.c main.c fill_with_ind.c exec_ops.c small_sort.c array_checks.c main_ops.c
 					
 OBJS			= $(SRCS:.c=.o)
  

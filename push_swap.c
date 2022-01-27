@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jjhezane <jjhezane@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/27 21:56:56 by jjhezane          #+#    #+#             */
+/*   Updated: 2022/01/27 21:56:57 by jjhezane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_lib.h"
 
 void	sort_two(t_node **stack_a)
@@ -6,18 +18,16 @@ void	sort_two(t_node **stack_a)
 		exec_swap(stack_a, NULL, 1);
 }
 
-
 void	p_swap(t_node **stack_a, t_node **stack_b, int len, int *arr)
 {
-
 	if (check_sorted(arr, len))
-		return;
+		return ;
 	if (len == 2)
 	{
 		sort_two(stack_a);
-		return;
+		return ;
 	}
-	bubble_sort(arr,len);
+	bubble_sort(arr, len);
 	fill_index(stack_a, arr, len);
 	if (len == 3)
 		small_sort(stack_a);
@@ -28,8 +38,3 @@ void	p_swap(t_node **stack_a, t_node **stack_b, int len, int *arr)
 	else
 		big_sort(stack_a, stack_b, len, 30);
 }
-
-// int main()
-// {
-	
-// }

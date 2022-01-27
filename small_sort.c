@@ -1,31 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jjhezane <jjhezane@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/27 21:55:55 by jjhezane          #+#    #+#             */
+/*   Updated: 2022/01/27 22:03:32 by jjhezane         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_lib.h"
-
-int	count_ops_to_add_from_front(t_node	*stack_a, int curr_len, int value)
-{
-	int arr	[curr_len + 1];
-	t_node	*tmp;
-	int		t;
-	int		count;
-
-	t = 0;
-	count = 0;
-	arr[t++] = value;
-	tmp = stack_a;
-	while (t < curr_len + 1)
-	{
-		arr[t++] = tmp->value;
-		tmp = tmp->next;
-	}
-	while (!check_sorted(arr, curr_len + 1))
-	{
-		t = arr[count];
-		arr[count] = arr[count + 1];
-		arr[count + 1] = t;
-		count++;
-	}
-	return (count);
-}
-
 
 int	find_cost(t_node *stack_b, int index)
 {
@@ -42,7 +27,6 @@ int	find_cost(t_node *stack_b, int index)
 	}
 	return (steps);
 }
-
 
 void	big_sort_final(t_node **stack_a, t_node **stack_b, int len)
 {
@@ -67,41 +51,38 @@ void	big_sort_final(t_node **stack_a, t_node **stack_b, int len)
 	}
 }
 
-
-void    small_sort(t_node **stack_a)
+void	small_sort(t_node **stack_a)
 {
-    t_node  *tmp;
-    t_node  *last;
+	t_node	*tmp;
+	t_node	*last;
 
-    tmp = *stack_a;
-    last = find_last(*stack_a);
-    if (last->value > tmp->value && tmp->next->value < tmp->value)
-        exec_swap(stack_a, NULL, 1);
-    else if (last->value < tmp->next->value && tmp->value > tmp->next->value)
-    {
-        exec_swap(stack_a, NULL, 1);
-        exec_rev_rotate(stack_a, NULL, 1);
-    }
-    else if (last->value < tmp->value && tmp->next->value < last->value)
-        exec_rotate(stack_a, NULL, 1);
-    else if (tmp->next->value > last->value && tmp->value < last->value)
-    {
-        exec_swap(stack_a, NULL, 1);
-        exec_rotate(stack_a, NULL, 1);
-    }
-    else if (tmp->value < tmp->next->value && last->value < tmp->value)
-        exec_rev_rotate(stack_a, NULL, 1);
+	tmp = *stack_a;
+	last = find_last(*stack_a);
+	if (last->value > tmp->value && tmp->next->value < tmp->value)
+		exec_swap(stack_a, NULL, 1);
+	else if (last->value < tmp->next->value && tmp->value > tmp->next->value)
+	{
+		exec_swap(stack_a, NULL, 1);
+		exec_rev_rotate(stack_a, NULL, 1);
+	}
+	else if (last->value < tmp->value && tmp->next->value < last->value)
+		exec_rotate(stack_a, NULL, 1);
+	else if (tmp->next->value > last->value && tmp->value < last->value)
+	{
+		exec_swap(stack_a, NULL, 1);
+		exec_rotate(stack_a, NULL, 1);
+	}
+	else if (tmp->value < tmp->next->value && last->value < tmp->value)
+		exec_rev_rotate(stack_a, NULL, 1);
 }
 
-void	medium_sort(t_node  **stack_a, t_node **stack_b, int len)
+void	medium_sort(t_node **stack_a, t_node **stack_b, int len)
 {
 	int	tmp;
-	int index;
 
 	tmp = len;
 	while (tmp > 3)
 	{	
-		index = (*stack_a)->index;
 		if ((*stack_a)->index == 0 || (*stack_a)->index == len - 1)
 		{
 			exec_push(stack_a, stack_b, 1);
@@ -113,17 +94,15 @@ void	medium_sort(t_node  **stack_a, t_node **stack_b, int len)
 	small_sort(stack_a);
 	while (*stack_b)
 	{
-		if ((*stack_b)->index  == 0)
+		if ((*stack_b)->index == 0)
 			exec_push(stack_a, stack_b, 2);
 		else if ((*stack_b)->index == len - 1)
 		{
 			exec_push(stack_a, stack_b, 2);
 			exec_rotate(stack_a, NULL, 1);
 		}
-		tmp--;
 	}
 }
-
 
 void	big_sort(t_node	**stack_a, t_node **stack_b, int len, int range)
 {
