@@ -26,38 +26,6 @@ int	count_ops_to_add_from_front(t_node	*stack_a, int curr_len, int value)
 	return (count);
 }
 
-// int	count_ops_to_add_from_back(t_node	*stack_a, int curr_len, int value)
-// {
-// 	int arr	[curr_len + 1];
-// 	t_node	*tmp;
-// 	int		t;
-// 	int		count;
-
-// 	t = 0;
-// 	count = 0;
-// 	while (t < curr_len)
-// 	{
-// 		arr[t++] = tmp->value;
-// 		tmp = tmp->next;
-// 	}
-// 	arr[t] = value;
-// 	while (!check_sorted(arr, curr_len + 1))
-// 	{
-// 		t = arr[curr_len + 1 - count];
-// 		arr[curr_len + 1 - count] = arr[curr_len - count];
-// 		arr[curr_len - count] = t;
-// 		count++;
-// 	}
-// 	return (count);
-// }
-
-// t_node	*find_max(t_node *stack)
-// {
-// 	int	curr;
-
-// 	curr = stack;
-// 	while (stack)
-// }
 
 int	find_cost(t_node *stack_b, int index)
 {
@@ -133,7 +101,7 @@ void	medium_sort(t_node  **stack_a, t_node **stack_b, int len)
 	tmp = len;
 	while (tmp > 3)
 	{	
-		index = (*stack_a)->index ;
+		index = (*stack_a)->index;
 		if ((*stack_a)->index == 0 || (*stack_a)->index == len - 1)
 		{
 			exec_push(stack_a, stack_b, 1);
@@ -143,7 +111,7 @@ void	medium_sort(t_node  **stack_a, t_node **stack_b, int len)
 			exec_rotate(stack_a, NULL, 1);
 	}
 	small_sort(stack_a);
-	while (tmp - 1 > 0)
+	while (*stack_b)
 	{
 		if ((*stack_b)->index  == 0)
 			exec_push(stack_a, stack_b, 2);

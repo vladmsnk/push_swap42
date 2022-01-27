@@ -14,6 +14,21 @@ t_node	*init_stack(int value)
 	return node;
 }
 
+void	push_front(t_node **stack, int value, int index)
+{
+	t_node	*curr;
+	t_node	*last;
+
+	if (*stack == NULL)
+		*stack = init_stack(value);
+	else
+	{
+		curr = init_stack(value);
+		last = find_last(*stack);
+		last->next = curr;
+	}
+	(*stack)->index = index;
+}
 
 void	push_back(t_node **stack, int value, int index)
 {

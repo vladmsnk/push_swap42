@@ -71,11 +71,11 @@ void    exec_push(t_node **s_a, t_node **s_b, int num)
      if (num == 1)
     {
         push_from_to(s_a, s_b);
-        write(1, "pa\n", 3);
+        write(1, "pb\n", 3);
     }
     else if (num == 2)
     {
         push_from_to(s_b, s_a);
-        write(1, "pb\n", 3);
+        write(1, "pa\n", 3);
     }
 }

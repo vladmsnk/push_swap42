@@ -39,26 +39,26 @@ int find_min(int *arr, int len)
 
 
 
-int	*stack_to_arr(int len, t_node *stack)
-{
-	int		*array;
-	int		i;
-	t_node	*tmp;
+// int	*stack_to_arr(int len, t_node *stack)
+// {
+// 	int		*array;
+// 	int		i;
+// 	t_node	*tmp;
 
-	tmp = stack;
-	i = 0;
-	array = (int *)malloc(sizeof(int) * len);
-	if (!array)
-		return (NULL);
-	while (i < len)
-	{
-		array[i] = tmp->value;
-		tmp = tmp->next;
-		i++;
-	}
-	bubble_sort(array, len);
-	return (array);
-}
+// 	tmp = stack;
+// 	i = 0;
+// 	array = (int *)malloc(sizeof(int) * len);
+// 	if (!array)
+// 		return (NULL);
+// 	while (i < len)
+// 	{
+// 		array[i] = tmp->value;
+// 		tmp = tmp->next;
+// 		i++;
+// 	}
+// 	bubble_sort(array, len);
+// 	return (array);
+// }
 
 // void	print_array(int *arr, int len)
 // {

@@ -1,6 +1,28 @@
 #include "push_swap_lib.h"
 
 
+int	check_duplicate(int *arr, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < len - 1)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (arr[i] == arr[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+
 int	check_str(char *str)
 {
 	int	i;
@@ -8,6 +30,9 @@ int	check_str(char *str)
 	i = 0;
 	if (ft_atoi(str) > INT_MAX || ft_atoi(str) < INT_MIN)
 		return (0);
+	if (str[i] != '-' && (str[i] <  '0' || str[i] > '9'))
+		return (0);
+	i++;
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -18,10 +43,11 @@ int	check_str(char *str)
 }
 
 
-t_node	*fill_stack(int argc, char **argv)
+t_node	*fill_stack(int argc, char **argv, int *arr)
 {
 	t_node	*stack;
 	int		i;
+	int		val;
 
 	i = 1;
 	stack = NULL;
@@ -31,10 +57,14 @@ t_node	*fill_stack(int argc, char **argv)
 		{
 			if (!check_str(argv[i]))
 				return (NULL);
-			push_back(&stack, ft_atoi(argv[i]), -1);
+			val = ft_atoi(argv[i]);
+			push_front(&stack, val, -1);
+			arr[i - 1] = val;
 			i++;
 		}
 	}
+	if (check_duplicate(arr, argc - 1))
+		return (NULL);
 	return (stack);
 }
 
@@ -42,20 +72,17 @@ int main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	// int	count;
+	int		arr[argc - 1];
 
-	stack_a = fill_stack(argc, argv);
+	if (argc < 2)
+		exit(1);
+	stack_a = fill_stack(argc, argv, arr);
 	stack_b = NULL;
-	// print_stack(stack_a);
 	if (stack_a == NULL)
 	{
 		write(1,"Error\n", 6);
-		return (-1);
+		exit(1);
 	}
-	p_swap(&stack_a,&stack_b, argc - 1);
-	// count = count_ops_to_add(stack_a, 3, 12);
-	// p_swap(&stack_a, argc - 1);
-	print_stack(stack_a);
-	// count = count_ops_to_add(stack_a, 4, 3);
-	// printf("%d\n", count);
+	p_swap(&stack_a,&stack_b, argc - 1, arr);
+	return (0);
 }

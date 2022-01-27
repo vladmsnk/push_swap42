@@ -1,15 +1,23 @@
 #include "push_swap_lib.h"
 
-
-
-
-void	p_swap(t_node **stack_a, t_node **stack_b, int len)
+void	sort_two(t_node **stack_a)
 {
-	int	*arr;
+	if ((*stack_a)->value > (*stack_a)->next->value)
+		exec_swap(stack_a, NULL, 1);
+}
 
-	arr = stack_to_arr(len, *stack_a);
-	// if (check_sorted(arr, len))
-	// 	return;
+
+void	p_swap(t_node **stack_a, t_node **stack_b, int len, int *arr)
+{
+
+	if (check_sorted(arr, len))
+		return;
+	if (len == 2)
+	{
+		sort_two(stack_a);
+		return;
+	}
+	bubble_sort(arr,len);
 	fill_index(stack_a, arr, len);
 	if (len == 3)
 		small_sort(stack_a);
@@ -19,7 +27,6 @@ void	p_swap(t_node **stack_a, t_node **stack_b, int len)
 		big_sort(stack_a, stack_b, len, 15);
 	else
 		big_sort(stack_a, stack_b, len, 30);
-	return;
 }
 
 // int main()
