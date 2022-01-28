@@ -6,7 +6,7 @@
 /*   By: jjhezane <jjhezane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 22:12:19 by jjhezane          #+#    #+#             */
-/*   Updated: 2022/01/27 22:12:28 by jjhezane         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:35:48 by jjhezane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	rotate(t_node **stack)
 	t_node	*last;
 	t_node	*tmp;
 
-	if (*stack)
+	if (*stack && (*stack)->next)
 	{
 		tmp = *stack;
 		*stack = (*stack)->next;

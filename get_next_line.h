@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_checks.c                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjhezane <jjhezane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 21:39:44 by jjhezane          #+#    #+#             */
-/*   Updated: 2022/01/28 15:20:55 by jjhezane         ###   ########.fr       */
+/*   Created: 2021/12/03 12:49:14 by jjhezane          #+#    #+#             */
+/*   Updated: 2022/01/28 19:12:24 by jjhezane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_lib.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	clean_stack(t_node	**stack)
-{
-	t_node	*tmp;
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
-	while (*stack)
-	{
-		tmp = *stack;
-		*stack = (*stack)->next;
-		free(tmp);
-	}
-}
+char	*get_next_line(int fd);
+size_t	ft_len(const char *s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char	*ft_sub(char const *s, unsigned int start, size_t len);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char *s1, char const *s2);
 
-int	check_sorted(int *arr, int len)
-{
-	int	i;
-
-	i = 0;
-	if (len == 1)
-		return (1);
-	while (i < len - 1)
-	{
-		if (arr[i] > arr[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
-}
+#endif
