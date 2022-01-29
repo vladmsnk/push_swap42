@@ -6,7 +6,7 @@
 /*   By: jjhezane <jjhezane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 21:37:04 by jjhezane          #+#    #+#             */
-/*   Updated: 2022/01/28 17:20:06 by jjhezane         ###   ########.fr       */
+/*   Updated: 2022/01/29 17:22:16 by jjhezane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	main(int argc, char **argv)
 	p_swap(&stack_a, &stack_b, argc - 1, arr);
 	free(arr);
 	free(stack_b);
-	exit(1);
+	clean_stack(&stack_a);
 	return (0);
 }

@@ -6,7 +6,7 @@ SRC = ft_atoi.c array_checks.c bubble_sort.c exec_ops.c fill_stack.c main_ops.c 
 
 OBJ = $(SRC:.c=.o)
 
-BONUS =	 ft_atoi.c array_checks.c bubble_sort.c exec_ops.c fill_stack.c main_ops.c ps_sort.c push_swap.c stack.c checker.c ft_strncmp.c ft_strlen.c get_next_line.c get_next_line_utils.c
+BONUS =	 ft_atoi.c array_checks.c bubble_sort.c exec_ops.c exec_ops_bonus.c fill_stack.c main_ops.c ps_sort.c push_swap.c stack.c checker.c ft_strncmp.c ft_strlen.c get_next_line.c get_next_line_utils.c
 
 BONUS_OBJ = $(BONUS:.c=.o)
 
