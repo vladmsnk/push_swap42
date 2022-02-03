@@ -32,11 +32,12 @@ rrr : rra and rrb at the same time.
 
 ### make bonus
 ### ./checker 7 8 19 3 4 1 9
-pa
-pb
-ra
-...
-rb
+pa \
+pb \
+ra \
+... \
+rb \
 
+Only valid commands
 
 ![image](https://user-images.githubusercontent.com/73408532/152304469-d24783dc-3e57-4c90-ac09-8b3f227b47ad.png)
