@@ -23,7 +23,18 @@ rrb : reverse rotate b - shift down all elements of stack b by 1. The last eleme
 becomes the first one. \
 rrr : rra and rrb at the same time.
 
-##To run program
+## To run program
 
 ### make
 ### ./push_swap 7 8 19 3 4 1 9
+
+## To run checker
+
+### make bonus
+### ./checker 7 8 19 3 4 1 9
+pa
+pb
+ra
+...
+rb
+![image](https://user-images.githubusercontent.com/73408532/152304469-d24783dc-3e57-4c90-ac09-8b3f227b47ad.png)
