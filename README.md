@@ -36,7 +36,7 @@ pa \
 pb \
 ra \
 ... \
-rb \
+rb 
 
 Only valid commands
 
